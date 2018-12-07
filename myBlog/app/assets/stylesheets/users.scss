@@ -1,0 +1,69 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show-container h2{
+  margin-top: 150px;
+  font-size: 40px;
+}
+
+.newUserInputArea {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newUserInputArea input {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.show-container {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.show-container h2{
+  text-align: center;
+}
+
+.show-container p{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.editUserInputArea input{
+  margin-top: 0px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  width: 20%;
+}
+
+.editUserInputArea p {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+
+.show-container li {
+  list-style: none;
+  margin: 30px 0;
+}
+
+.editUserInputArea .submit-btn {
+  width: 100px;
+  margin-top: 30px;
+}
+
+.editUserInputArea textarea {
+  width: 20%;
+  height: 100px;
+}

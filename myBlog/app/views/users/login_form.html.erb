@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ログイン</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ログイン</h1>
+      <%= form_tag("/users/login") do %>
+        <div class="newUserInputArea">
+          <label for="name">ユーザー名</label>
+          <input name="user_name" value="<%= @user.user_name %>"><br >
+          <label for="name">パスワード</label>
+          <input name="password"  type="password"><br >
+          <input type="submit" class="submit-btn">
+        </div>
+      <% end %>
+    </div>
+
+
+  </body>
+</html>

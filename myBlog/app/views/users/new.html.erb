@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>新規登録</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>新規登録</h1>
+      <%= form_tag("/users/create") do %>
+      <p class="errorMessage"><%= @user.errors.full_messages[0] %></p>
+        <div class="newUserInputArea">
+          <label for="name">ユーザー名</label>
+          <input name="user_name" value="<%= @user.user_name %>"><br >
+          <label for="name">パスワード</label>
+          <input name="password" value="<%= @user.password %>" type="password"><br >
+          <input type="submit" class="submit-btn">
+        </div>
+      <% end %>
+    </div>
+
+
+  </body>
+</html>

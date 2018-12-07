@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="show-question-list">
+      <p id="question-title"><%= link_to(@question.title, "/questions/#{@question.id}/show", {:style=>"text-decoration: none; color: white;"}) %></p>
+      <p id="question-content">
+        <%= simple_format(@question.content, style: "text-align:left; width: 90%; margin: 0 auto;") %>
+      </p>
+      <% if @question.image_name %>
+      <img src="<%= "/user_images/#{@question.image_name}" %>">
+      <% end %>
+      <br>
+      <div class="question-list-bottom">
+        <ul>
+          <li id="questioner">質問者：<%= link_to(@question.user.user_name, "/users/#{@question.user.id}/show", :style=>"text-decoration: none; color: white;") %></li>
+          <li id="currentTime"><%= @question.updated_at.strftime("%Y-%m-%d %H:%M") %></li>
+        </ul>
+      </div>
+      <% if @current_user.id == @question.user_id %>
+      <ul class="question-list-edit-destroy">
+        <li class="edit"><%= link_to("編集", "/questions/#{@question.id}/edit", :style=>"text-decoration: none; color: blue;") %></li>
+        <li class="destroy"><%= link_to "削除", "/questions/#{@question.id}/destroy", {:style=>"text-decoration: none; color: blue;", method: "post"} %></li>
+      </ul>
+      <% end %>
+    </div>
+
+    <div class="replyArea">
+      <p>以下, 他ユーザからの返信です.</p>
+    </div>
+
+
+  </body>
+</html>

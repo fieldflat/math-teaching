@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>質問一覧</title>
+</head>
+<body>
+
+  <% @questions.each do |q| %>
+  <div class="question-list">
+    <p id="question-title"><%= link_to(q.title, "/questions/#{q.id}/show", {:style=>"text-decoration: none; color: white;"}) %></p>
+    <p id="question-content">
+      <%= simple_format(q.content, style: "text-align:left; width: 90%; margin: 0 auto;") %>
+    </p>
+    <% if q.image_name %>
+    <img src="<%= "/user_images/#{q.image_name}" %>">
+    <% end %>
+    <br>
+    <div class="question-list-bottom">
+      <ul>
+        <li id="questioner">質問者：<%= link_to(q.user.user_name, "/users/#{q.user.id}/show", :style=>"text-decoration: none; color: white;") %></li>
+        <li id="currentTime"><%= q.updated_at.strftime("%Y-%m-%d %H:%M") %></li>
+      </ul>
+    </div>
+    <% if @current_user.id == q.user_id %>
+    <ul class="question-list-edit-destroy">
+      <li class="edit"><%= link_to("編集", "/questions/#{q.id}/edit", :style=>"text-decoration: none; color: blue;") %></li>
+      <li class="destroy"><%= link_to "削除", "/questions/#{q.id}/destroy", {:style=>"text-decoration: none; color: blue;", method: "post"} %></li>
+    </ul>
+    <% end %>
+  </div>
+  <% end %>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>編集ページ</h1>
+      <p class="errorMessage"><%= @user.errors.full_messages[0] %></p>
+      <%= form_tag("/users/#{@user.id}/update") do %>
+        <div class="editUserInputArea">
+          <!-- <label for="name">ユーザー名</label> -->
+          <p>ユーザ名</p>
+          <input name="user_name" value="<%= @user.user_name %>"><br >
+          <!-- <label for="name">生まれ年</label> -->
+          <p>生まれ年</p>
+          <input name="year" value="<%= @user.year %>"><br >
+          <!-- <label for="name">生まれ月</label> -->
+          <p>生まれ月</p>
+          <input name="month" value="<%= @user.month %>"><br >
+          <!-- <label for="name">生まれ日</label> -->
+          <p>生まれ日</p>
+          <input name="day" value="<%= @user.day %>"><br >
+          <!-- <label for="name">出身地</label> -->
+          <p>出身地</p>
+          <input name="prefectures" value="<%= @user.prefectures %>"><br >
+          <!-- <label for="name">意気込み</label> -->
+          <p>意気込み</p>
+          <textarea name="enthusiasm" type="text"><%= @user.enthusiasm %></textarea><br >
+          <input type="submit" class="submit-btn">
+        </div>
+      <% end %>
+    </div>
+
+  </body>
+</html>

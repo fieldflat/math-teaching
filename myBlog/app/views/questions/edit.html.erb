@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <h1>質問編集ページ</h1>
+    <p class="errorMessage"><%= @question.errors.full_messages[0] %></p>
+    <%= form_tag("/questions/#{@question.id}/update", {multipart: true}) do %>
+      <div class="questionArea">
+          <p>タイトル</p>
+          <input name="title" value="<%= @question.title %>" class="title"><br >
+          <p>本文</p>
+          <textarea name="content" class="content" ><%= @question.content %></textarea><br>
+        <% if @question.image_name %>
+        <img src="<%= "/user_images/#{@question.image_name}" %>">
+        <% end %>
+        <input type="submit" class="submit">
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

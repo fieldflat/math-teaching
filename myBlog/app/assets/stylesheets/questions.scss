@@ -1,0 +1,153 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.question-list {
+  background-color: rgba(181, 188, 198, 1.0);
+  border-radius: 20px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 30px;
+  padding-bottom: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  // overflow: hidden;
+}
+
+
+.container {
+  padding-bottom: 100px;
+}
+
+.container h1 {
+  margin-top: 150px;
+  font-size: 40px;
+}
+
+.edit {
+  float: right;
+  display: inline;
+}
+
+.question-list {
+  margin-top: 130px;
+}
+
+.destroy {
+  float: right;
+  margin: 0 10px;
+  display: inline;
+}
+
+.question-list-edit-destroy li {
+  float: right;
+  margin: 0 10px;
+  line-height: 60px;
+}
+
+.question-list #question-title {
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.question-list #question-content {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.question-list img {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.question-list-bottom li{
+  list-style: none;
+  text-align: right;
+}
+
+.questionArea {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.questionArea input{
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+
+.title {
+  width: 50%;
+}
+
+.content {
+  margin-top: 0px;
+  width: 50%;
+  height: 300px;
+}
+
+textarea {
+  font-size: 18px;
+}
+
+.file {
+  // border: 1px solid red;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  padding-left: 100px;
+}
+
+.submit {
+  // border: 1px solid red;
+  margin-top: 20px;
+}
+
+
+//
+//
+//
+
+.show-question-list {
+  background-color: rgba(223, 36, 182, 0.68);
+  border-radius: 20px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 0 30px;
+  padding-bottom: 50px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  // overflow: hidden;
+}
+
+.show-question-list #question-title {
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.show-question-list #question-content {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.show-question-list img {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+//
+//
+//
+
+.replyArea {
+  width: 80%;
+  margin: 0 auto;
+}

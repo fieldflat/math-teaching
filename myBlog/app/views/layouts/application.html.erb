@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="headerList">
+        <ul>
+          <% if @current_user %>
+            <li><%= link_to("HOME", "/", :style=>"text-decoration: none; color: white;") %></li>
+            <li><%= link_to "ログアウト", "/users/logout", {method: "post", :style=>"text-decoration: none; color: white;"}  %></li>
+            <li><%= link_to "質問一覧", "/questions/index", :style=>"text-decoration: none; color: white;"  %></li>
+            <li><%= link_to "質問する", "/questions/new", :style=>"text-decoration: none; color: white;"  %></li>
+            <li id="loginUser"><%= link_to("ログインユーザ："+@current_user.user_name, "/users/#{@current_user.id}/show", :style=>"text-decoration: none; color: white;") %></li>
+          <% else %>
+          <li><%= link_to("HOME", "/", :style=>"text-decoration: none; color: white;") %></li>
+          <li><%= link_to("新規登録", "/users/new", :style=>"text-decoration: none; color: white;") %></li>
+          <li><%= link_to("ログイン", "/users/login_form", :style=>"text-decoration: none; color: white;") %></li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

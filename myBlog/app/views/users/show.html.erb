@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="show-container">
+      <h2>ユーザ情報</h2>
+      <% if @current_user.id == @user.id %>
+        <p><%= link_to("編集", "/users/#{@user.id}/edit", :style=>" color: grey;") %></p>
+      <% end %>
+    <ul>
+      <li>ユーザ名：<%= @user.user_name %></li>
+      <% if @user.year %>
+        <li><%= "生まれ年：#{@user.year}" %></li>
+      <% else %>
+        <li><%= "生まれ年： " %></li>
+      <% end %>
+
+      <% if @user.month %>
+        <li><%= "生まれ月：#{@user.month}" %></li>
+      <% else %>
+        <li><%= "生まれ月： " %></li>
+      <% end %>
+
+      <% if @user.day %>
+        <li><%= "生まれ日：#{@user.day}" %></li>
+      <% else %>
+        <li><%= "生まれ日： " %></li>
+      <% end %>
+
+      <li>出身地：<%= @user.prefectures %></li>
+      <li>意気込み：<%= @user.enthusiasm %></li>
+    </ul>
+    </div>
+  </body>
+</html>

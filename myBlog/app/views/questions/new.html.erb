@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>質問投稿画面</h1>
+      <p class="errorMessage"><%= @question.errors.full_messages[0] %></p>
+      <%= form_tag("/questions/#{@current_user.id}/create", {multipart: true}) do %>
+        <div class="questionArea">
+          <!-- <label for="name">タイトル</label> -->
+          <p>タイトル</p>
+          <input name="title" placeholder="タイトルを入力してください." value="<%= @question.title %>" class="title"><br >
+          <!-- <label for="name">内容</label> -->
+          <p>本文</p>
+          <textarea name="content" placeholder="本文を入力してください." class="content"></textarea><br>
+          <!-- <label for="name">写真</label> -->
+          <input name="image" type="file" class="file"><br >
+          <input type="submit" class="submit">
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>
