@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   post "/questions/:id/create" => "questions#create"
   get "/questions/:id/edit" => "questions#edit"
   post "/questions/:id/update" => "questions#update"
-  post "questions/:id/destroy" => "questions#destroy"
+  post "/questions/:id/destroy" => "questions#destroy"
+
+  post "/answers/:user_id/:question_id" => "answers#create"
+  post "/answers/destroy/:user_id/:question_id" => "answers#destroy"
 
 
 end

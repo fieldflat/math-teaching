@@ -84,6 +84,13 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
+    @answers = Answer.where(question_id: params[:id]).order(updated_at: "desc")
+    @answer = Answer.find_by(user_id: @current_user.id)
+
+    if !@answer
+      @answer = Answer.new
+    end
+
   end
 
 
